@@ -52,3 +52,31 @@ function hide_login_errors_info() {
 	return '<strong>ERROR</strong>: Stop guessing!';
 }
 add_filter( 'login_errors', __NAMESPACE__ . '\\hide_login_errors_info' );
+
+
+/**
+ * Disable feeds
+ * 
+ * Redirect to the homepage all users trying to access feeds.
+ */
+function disable_feeds() {
+	wp_redirect( home_url() );
+	die;
+}
+
+// Disable global RSS, RDF & Atom feeds.
+add_action( 'do_feed', __NAMESPACE__ . '\\disable_feeds', -1 );
+add_action( 'do_feed_rdf', __NAMESPACE__ . '\\disable_feeds', -1 );
+add_action( 'do_feed_rss', __NAMESPACE__ . '\\disable_feeds', -1 );
+add_action( 'do_feed_rss2', __NAMESPACE__ . '\\disable_feeds', -1 );
+add_action( 'do_feed_atom', __NAMESPACE__ . '\\disable_feeds', -1 );
+
+// Disable comment feeds.
+add_action( 'do_feed_rss2_comments', __NAMESPACE__ . '\\disable_feeds', -1 );
+add_action( 'do_feed_atom_comments', __NAMESPACE__ . '\\disable_feeds', -1 );
+
+// Prevent feed links from being inserted in the <head> of the page.
+add_action( 'feed_links_show_posts_feed',    '__return_false', -1 );
+add_action( 'feed_links_show_comments_feed', '__return_false', -1 );
+remove_action( 'wp_head', 'feed_links', 2 );
+remove_action( 'wp_head', 'feed_links_extra', 3 );
