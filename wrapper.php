@@ -1,8 +1,10 @@
 <?php
 /**
- * Wrapper Content
- * Included in all templates
+ * Wrapper template
  * 
+ * Wraps all templates
+ * 
+ * @package BoilerPressWP
  */
 
 // Exit if accessed directly.
@@ -23,11 +25,11 @@ defined( 'ABSPATH' ) || exit;
 
     <div class="site-wrapper">
             
-        <?php 
-        get_header(); // header 
-        include BoilerPress\Wrapper\template_path(); // main content
-        get_footer(); // footer
-        ?>
+        <?php get_header(); // header ?>
+
+        <?php include BoilerPress\Wrapper\template_path(); // main content ?>
+        
+        <?php get_footer(); // footer ?>
 
     </div>
 
