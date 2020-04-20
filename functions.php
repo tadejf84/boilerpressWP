@@ -1,10 +1,14 @@
 <?php
+/**
+ * Theme functions
+ * 
+ * @package BoilerPressWP
+ */
+
+// Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-/**
- * require includes
- * 
- */
+// Required includes
 require 'inc/globals.php';
 require 'inc/helpers.php';
 require 'inc/setup.php';
