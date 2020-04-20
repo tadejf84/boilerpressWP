@@ -15,5 +15,5 @@ require 'inc/setup.php';
 require 'inc/customize.php';
 require 'inc/assets.php';
 require 'inc/wrapper.php';
-require 'inc/pagination.php';
+require 'inc/navigation.php';
 require 'inc/widgets.php';

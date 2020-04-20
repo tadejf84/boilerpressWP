@@ -1,3 +1,4 @@
+
 <div class="container">
     <main class="main main--index">
 
@@ -16,6 +17,8 @@
                     </div>
                 <?php endwhile; ?>
             </div>
+
+            <?php BoilerPress\Nav\archive_pagination(); ?>
         <?php endif; ?>
 
     </main>
