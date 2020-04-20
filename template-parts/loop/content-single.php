@@ -1,49 +1,23 @@
 <?php
 /**
- * Single post partial template
+ * Single page template content
  *
- * @package understrap
+ * @package BoilerPressWP
  */
 
-// Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+<article <?php post_class('article-single'); ?> id="post-<?php the_ID(); ?>">
 
-	<header class="entry-header">
+	<header class="article-single__header">
+        <?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+		<h1 class="article-single__title"><?php the_title(); ?></h1>
+		<?php get_template_part( 'template-parts/article-meta' ); ?>
+	</header>
 
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-
-		<div class="entry-meta">
-
-			<?php understrap_posted_on(); ?>
-
-		</div><!-- .entry-meta -->
-
-	</header><!-- .entry-header -->
-
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
-
-	<div class="entry-content">
-
+	<div class="article-single__content">
 		<?php the_content(); ?>
+    </div>
 
-		<?php
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-
-		<?php understrap_entry_footer(); ?>
-
-	</footer><!-- .entry-footer -->
-
-</article><!-- #post-## -->
+</article>

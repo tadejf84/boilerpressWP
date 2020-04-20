@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || exit;
 
 <article <?php post_class('article-page'); ?> id="post-<?php the_ID(); ?>">
 
-	<header class="article-page_header">
+	<header class="article-page__header">
         <?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
         <h1 class="article-page__title"><?php the_title(); ?></h1>
 	</header>
