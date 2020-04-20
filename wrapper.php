@@ -23,13 +23,11 @@ defined( 'ABSPATH' ) || exit;
 
     <div class="site-wrapper">
             
-        <?php get_header(); // header ?>
-
-        <main>
-            <?php include BoilerPress\Wrapper\template_path(); // main content ?>
-        </main>
-
-        <?php get_footer(); // footer ?>
+        <?php 
+        get_header(); // header 
+        include BoilerPress\Wrapper\template_path(); // main content
+        get_footer(); // footer
+        ?>
 
     </div>
 
