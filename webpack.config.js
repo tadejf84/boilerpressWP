@@ -1,27 +1,24 @@
-// Webpack uses this to work with directories
 const path = require('path');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 
-// This is main configuration object.
-// Here you write different options and tell Webpack what to do
 module.exports = {
 
-    // Path to your entry point. From this file Webpack will begin his work
+    // Entry point
     entry: './src/js/main.js',
 
-    // Path and filename of your result bundle.
-    // Webpack will bundle all JavaScript into this file
+    // JS Output
     output: {
         path: path.resolve(__dirname, 'dist/js'),
         filename: 'main.min.js'
     },
 
-    // plugins
+    // Plugins
     plugins: [
+        // BrowserSync options
         new BrowserSyncPlugin(
-            // BrowserSync options
             {
                 host: 'localhost',
                 port: 3000,
@@ -29,15 +26,21 @@ module.exports = {
                 files: ['*.php']
             }
         ),
+        // Extracts the compiled CSS from the SASS files defined in the entry
         new MiniCssExtractPlugin({
             filename: "../css/main.min.css",
             allChunks: true,
-        })
+        }),
+        // Move fonts and images from src to dist
+        new CopyPlugin([
+            { from: './src/img', to: '../img' },
+            { from: './src/fonts', to: '../fonts' },
+        ]),
     ],
 
-    // babel config
     module: {
         rules: [
+            // Babel config
             {
                 test: /\.m?js$/,
                 exclude: /(node_modules|bower_components)/,
@@ -47,34 +50,28 @@ module.exports = {
                         presets: ['@babel/preset-env']
                     }
                 }
+            },
+            // CSS/SASS config
+            {
+                test: /\.scss$/,
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader
+                    },
+                    {
+                        loader: "css-loader",
+                        options: {
+                            importLoaders: 2
+                        }
+                    },
+                    {
+                        loader: 'sass-loader'
+                    }
+                ]
             }
         ]
     },
 
-    module: {
-        rules: [
-        // Extracts the compiled CSS from the SASS files defined in the entry
-        {
-            test: /\.scss$/,
-            use: [
-            {
-                loader: MiniCssExtractPlugin.loader
-            },
-            {
-                // Interprets CSS
-                loader: "css-loader",
-                options: {
-                importLoaders: 2
-                }
-            },
-            {
-                loader: 'sass-loader'
-            }
-            ]
-        }
-        ],
-    },
-
-    // Default mode for Webpack is production.
+    // Set Webpack mode - default is production
     mode: 'development'
 };
