@@ -1,6 +1,16 @@
+<?php
+/**
+ * Index template
+ * 
+ * @package BoilerPressWP
+ */
 
-<div class="container">
-    <main class="main main--index">
+defined( 'ABSPATH' ) || exit;
+?>
+
+<main class="main main--index">
+
+    <div class="container">
 
         <header class="page-header">
             <h1><?php the_archive_title(); ?></h1>
@@ -18,8 +28,10 @@
                 <?php endwhile; ?>
             </div>
 
-            <?php BoilerPress\Nav\archive_pagination(); ?>
+            <?php BoilerPress\Nav\archive_pagination(); // pagination ?>
         <?php endif; ?>
+        
+    </div>
 
-    </main>
-</div>
+</main>
+
