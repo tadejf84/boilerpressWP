@@ -1,5 +1,20 @@
+/*************
+* Assets
+*************/
 @import "bootstrap4"; // Bootstrap 4.4.1
 
-body {
-    color: black;
-}
+
+/*************
+* Theme styles
+*************/
+@import "partials/variables";               // declare your variables here
+@import "partials/mixins";                  // your own mixins
+@import "partials/base/base";               // global styles
+@import "partials/base/typography";         // global typography
+@import "partials/components/buttons";      // global buttons styles
+@import "partials/layout/header";           // header styles
+@import "partials/layout/sidebar";          // sidebar styles
+@import "partials/layout/footer";           // footer styles
+@import "partials/templates/home";          // home page styles
+@import "partials/templates/pages";         // other pages
+@import "partials/templates/posts";         // archive and single pages styles
