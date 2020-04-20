@@ -1,3 +1,13 @@
+<?php
+/**
+ * Article meta for archives & single
+ *
+ * @package BoilerPressWP
+ */
+
+defined( 'ABSPATH' ) || exit;
+?>
+
 <div class="article-index__meta">
             
     <span class="date">
