@@ -1,24 +1,21 @@
 <?php
-namespace BoilerPress\Assets;
-
 /**
- * Enqueue scripts
- *
+ * Enqueue theme assets
+ * 
+ * @package BoilerPressWP
  */
+
+namespace BoilerPress\Assets;
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
 if ( ! function_exists( 'enqueue_theme_assets' ) ) {
 
-	/**
-	 * Load theme's JavaScript and CSS sources.
-	 */
 	function enqueue_theme_assets() {
 
-		// Get the theme data.
-		$the_theme     = wp_get_theme();
-		$theme_version = $the_theme->get( 'Version' );
+		// Get theme version
+		$theme_version = wp_get_theme()->get( 'Version' );
 
 		/**
 		 * Theme stylesheets
