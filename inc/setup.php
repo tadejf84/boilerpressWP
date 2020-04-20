@@ -90,3 +90,29 @@ if ( ! function_exists( 'custom_excerpt_more_link' ) ) {
 		return $post_excerpt;
 	}
 }
+
+
+/**
+ * Customize the archive title
+ *
+ * @param string Title
+ *
+ * @return string
+ */
+add_filter( 'get_the_archive_title', __NAMESPACE__ . '\\customize_archive_title' );
+function customize_archive_title($title) {
+	if ( is_category() ) {
+        $title = single_cat_title( '', false );
+    } elseif ( is_tag() ) {
+        $title = single_tag_title( '', false );
+    } elseif ( is_author() ) {
+        $title = get_the_author() . ' ' . _e( 'Archives', 'boilderpress' );
+    } elseif ( is_post_type_archive() ) {
+        $title = post_type_archive_title( '', false );
+    } elseif ( is_tax() ) {
+        $title = single_term_title( '', false );
+    } else {
+        $title = _e( 'Blog', 'boilderpress' );
+    }
+    return $title;
+}
