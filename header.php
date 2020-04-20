@@ -14,7 +14,9 @@ defined( 'ABSPATH' ) || exit;
 
         <div class="site-header__brand">
             <?php if ( ! has_custom_logo() ) : ?>
-                <a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a>
+                <a class="custom-logo-link" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url">
+                    <span><?php bloginfo( 'name' ); ?></span>
+                </a>
             <?php else : ?>
                 <?php the_custom_logo(); ?>
             <?php endif; ?>
