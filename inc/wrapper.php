@@ -1,18 +1,30 @@
 <?php
+/**
+ * Generate HTML wrapper
+ * 
+ * Wraps all pages
+ * 
+ * @package BoilerPressWP
+ */
+
 namespace BoilerPress\Wrapper;
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+
 /**
- * Class BaseWrapper
+ * Class TemplateWrapper
  * 
  */
 if ( ! class_exists( 'TemplateWrapper' ) ) {
 
 	class TemplateWrapper {
 
-		static $main_template; 	// Main template path
-		static $base; 			// Template basename - for example for page.php is page
+		public static $main_template; 	// Main template path
+		public static $base; 			// Template basename - for example for page.php is page
 	
-		static function wrap ( $template ) {
+		public static function wrap ( $template ) {
 			self::$main_template = $template;
 			self::$base = substr( basename( self::$main_template ), 0, -4 );
 	
