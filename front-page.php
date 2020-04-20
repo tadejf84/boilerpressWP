@@ -1,6 +1,6 @@
 <?php
 /**
- * Front page page template
+ * Front page template
  *
  * @package BoilerPressWP
  */
@@ -16,6 +16,6 @@ defined( 'ABSPATH' ) || exit;
                 <?php get_template_part( 'template-parts/loop/content-page' ); ?>
             <?php endwhile; ?>
         <?php endif; ?>
-        
+
     </div>
 </main>
