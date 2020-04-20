@@ -17,3 +17,4 @@ require 'inc/assets.php';
 require 'inc/wrapper.php';
 require 'inc/navigation.php';
 require 'inc/widgets.php';
+require 'inc/performance.php';
