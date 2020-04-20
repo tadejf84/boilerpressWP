@@ -1,11 +1,22 @@
 <?php
-defined( 'ABSPATH' ) || exit;
+/**
+ * 404 template
+ * 
+ * @package BoilerPressWP
+ */
 
-get_header();
+defined( 'ABSPATH' ) || exit;
 ?>
 
-<div class="wrapper wrapper--404">
-	<h1>404</h1>
-</div>
+<main class="main main--404">
 
-<?php get_footer();
+	<div class="container">
+
+		<section class="error-404">
+			<h1 class="page-title"><?php esc_html_e( '404', 'boilerpress' ); ?></h1>
+			<p><?php esc_html_e( 'Nothing found.', 'boilerpress' ); ?></p>
+		</section>
+
+	</div>
+
+</main>
