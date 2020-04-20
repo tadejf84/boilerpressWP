@@ -6,6 +6,7 @@ defined( 'ABSPATH' ) || exit;
  * 
  */
 require 'inc/helpers.php';
+require 'inc/globals.php';
 require 'inc/setup.php';
 require 'inc/assets.php';
 require 'inc/wrapper.php';

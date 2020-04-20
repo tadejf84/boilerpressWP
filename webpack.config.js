@@ -51,33 +51,30 @@ module.exports = {
         ]
     },
 
-   module: {
-    rules: [
-      // Extracts the compiled CSS from the SASS files defined in the entry
-      {
-        test: /\.scss$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader
-          },
-          {
-            // Interprets CSS
-            loader: "css-loader",
-            options: {
-              importLoaders: 2
+    module: {
+        rules: [
+        // Extracts the compiled CSS from the SASS files defined in the entry
+        {
+            test: /\.scss$/,
+            use: [
+            {
+                loader: MiniCssExtractPlugin.loader
+            },
+            {
+                // Interprets CSS
+                loader: "css-loader",
+                options: {
+                importLoaders: 2
+                }
+            },
+            {
+                loader: 'sass-loader'
             }
-          },
-          {
-            loader: 'sass-loader'
-          }
-        ]
-      }
-    ],
-  },
+            ]
+        }
+        ],
+    },
 
     // Default mode for Webpack is production.
-    // Depending on mode Webpack will apply different things
-    // on final bundle. For now we don't need production's JavaScript 
-    // minifying and other thing so let's set mode to development
     mode: 'development'
 };
