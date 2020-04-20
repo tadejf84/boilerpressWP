@@ -1,5 +1,15 @@
-<div class="container">
-    <main class="main main--search">
+<?php
+/**
+ * Search results template
+ * 
+ * @package BoilerPressWP
+ */
+
+defined( 'ABSPATH' ) || exit;
+?>
+
+<main class="main main--search">
+    <div class="container">
 
         <header class="page-header">
             <h1 class="page-title">
@@ -22,6 +32,7 @@
             <?php BoilerPress\Nav\archive_pagination(); // pagination ?>
         <?php endif; ?>
 
-    </main>
-</div>
+    </div>
+</main>
+
 
