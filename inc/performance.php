@@ -64,7 +64,7 @@ function disable_feeds() {
 	die;
 }
 
-// Disable global RSS, RDF & Atom feeds.
+// Disable global RSS, RDF & Atom feeds
 add_action( 'do_feed', __NAMESPACE__ . '\\disable_feeds', -1 );
 add_action( 'do_feed_rdf', __NAMESPACE__ . '\\disable_feeds', -1 );
 add_action( 'do_feed_rss', __NAMESPACE__ . '\\disable_feeds', -1 );
