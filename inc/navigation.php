@@ -59,7 +59,6 @@ if ( ! function_exists( 'archive_pagination' ) ) {
 }
 
 
-
 /**
  * Custom post navigation
  * 
