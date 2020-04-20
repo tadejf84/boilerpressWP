@@ -2,7 +2,9 @@
 /**
  * Theme basic setup
  *
+ * @package BoilerPressWP
  */
+
 namespace BoilerPress\Setup;
 
 // Exit if accessed directly.
