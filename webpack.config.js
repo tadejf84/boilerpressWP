@@ -3,6 +3,7 @@ const path = require('path');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+
 // This is main configuration object.
 // Here you write different options and tell Webpack what to do
 module.exports = {
@@ -24,11 +25,12 @@ module.exports = {
             {
                 host: 'localhost',
                 port: 3000,
-                proxy: 'http://example-page.da/'
+                proxy: 'http://example-page.da/',
+                files: ['*.php']
             }
         ),
         new MiniCssExtractPlugin({
-            filename: 'main.min.css',
+            filename: "../css/main.min.css",
             allChunks: true,
         })
     ],
@@ -56,10 +58,7 @@ module.exports = {
         test: /\.scss$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-                publicPath: 'dist/css/',
-            }
+            loader: MiniCssExtractPlugin.loader
           },
           {
             // Interprets CSS
