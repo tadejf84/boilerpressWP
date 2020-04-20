@@ -22,7 +22,7 @@ if ( ! function_exists( 'theme_setup' ) ) {
 
 		// WP Nav Menus
 		register_nav_menus( array(
-			'primary' => __( 'Primary Menu', 'boilerpress' ),
+			'main-menu' => __( 'Main Menu', 'boilerpress' ),
 		) );
 
 		add_theme_support( 'html5', array(
@@ -73,7 +73,7 @@ if ( ! function_exists( 'custom_excerpt_more_text' ) ) {
 	}
 }
 
-add_filter( 'wp_trim_excerpt',  __NAMESPACE__ . 'custom_excerpt_more_link' );
+add_filter( 'wp_trim_excerpt',  __NAMESPACE__ . '\\custom_excerpt_more_link' );
 
 if ( ! function_exists( 'custom_excerpt_more_link' ) ) {
 	/**

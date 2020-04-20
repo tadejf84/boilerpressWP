@@ -26,7 +26,11 @@ module.exports = {
                 port: 3000,
                 proxy: 'http://example-page.da/'
             }
-        )
+        ),
+        new MiniCssExtractPlugin({
+            filename: 'main.min.css',
+            allChunks: true,
+        })
     ],
 
     // babel config
@@ -45,21 +49,32 @@ module.exports = {
         ]
     },
 
-    module: {
-        rules: [
+   module: {
+    rules: [
+      // Extracts the compiled CSS from the SASS files defined in the entry
+      {
+        test: /\.scss$/,
+        use: [
           {
-            test: /\.s[ac]ss$/i,
-            use: [
-              // Creates `style` nodes from JS strings
-              'style-loader',
-              // Translates CSS into CommonJS
-              'css-loader',
-              // Compiles Sass to CSS
-              'sass-loader',
-            ],
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+                publicPath: 'dist/css/',
+            }
           },
-        ],
-      },
+          {
+            // Interprets CSS
+            loader: "css-loader",
+            options: {
+              importLoaders: 2
+            }
+          },
+          {
+            loader: 'sass-loader'
+          }
+        ]
+      }
+    ],
+  },
 
     // Default mode for Webpack is production.
     // Depending on mode Webpack will apply different things
