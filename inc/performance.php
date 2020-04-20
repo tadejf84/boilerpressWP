@@ -87,3 +87,4 @@ remove_action( 'wp_head', 'feed_links_extra', 3 );
  * 
  */
 add_filter('xmlrpc_enabled', '__return_false');
+
