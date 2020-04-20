@@ -1,47 +1,23 @@
 <?php
 /**
- * Search results partial template
+ * Search results content
  *
- * @package understrap
+ * @package BoilerPressWP
  */
 
-// Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+<article <?php post_class('article-index'); ?> id="post-<?php the_ID(); ?>">
 
-	<header class="entry-header">
+    <header class="article-index__header">
+        <?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+        <h2 class="article-index__title"><?php the_title(); ?></h2>
+        <?php get_template_part( 'template-parts/article-meta' ); ?>
+    </header>
 
-		<?php
-		the_title(
-			sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
-			'</a></h2>'
-		);
-		?>
-
-		<?php if ( 'post' == get_post_type() ) : ?>
-
-			<div class="entry-meta">
-
-				<?php understrap_posted_on(); ?>
-
-			</div><!-- .entry-meta -->
-
-		<?php endif; ?>
-
-	</header><!-- .entry-header -->
-
-	<div class="entry-summary">
-
-		<?php the_excerpt(); ?>
-
-	</div><!-- .entry-summary -->
-
-	<footer class="entry-footer">
-
-		<?php understrap_entry_footer(); ?>
-
-	</footer><!-- .entry-footer -->
-
-</article><!-- #post-## -->
+    <div class="article-index__content">
+        <?php the_excerpt(); ?>
+    </div>
+    
+</article>
