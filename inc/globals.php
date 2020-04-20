@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme globals
+ * Define your theme constants here
  * 
  * @package BoilerPressWP
  */
