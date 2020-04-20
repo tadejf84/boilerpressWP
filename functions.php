@@ -12,6 +12,7 @@ defined( 'ABSPATH' ) || exit;
 require 'inc/globals.php';
 require 'inc/helpers.php';
 require 'inc/setup.php';
+require 'inc/customize.php';
 require 'inc/assets.php';
 require 'inc/wrapper.php';
 require 'inc/pagination.php';
