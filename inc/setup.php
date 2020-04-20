@@ -33,10 +33,10 @@ if ( ! function_exists( 'theme_setup' ) ) {
 			'caption',
 		) );
 
-        // Post Thumbnails Support
+        // Post thumbnails support
 		add_theme_support( 'post-thumbnails' );
 
-        // Post Formats Support
+        // Post formats support
 		add_theme_support( 'post-formats', array(
 			'aside',
 			'image',
@@ -45,10 +45,10 @@ if ( ! function_exists( 'theme_setup' ) ) {
 			'link',
 		) );
 
-		// Custom logo support.
+		// Custom logo support
 		add_theme_support( 'custom-logo' );
 
-		// Add support for responsive embeds.
+		// Responsive embeds support
 		add_theme_support( 'responsive-embeds' );
 
 	}
