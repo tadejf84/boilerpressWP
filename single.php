@@ -1,6 +1,6 @@
 <?php
 /**
- * Single page template
+ * Single post template
  *
  * @package BoilerPressWP
  */
@@ -12,7 +12,7 @@ defined( 'ABSPATH' ) || exit;
     <main class="main main--single">
 
         <?php if( have_posts() ) : ?>
-            
+
             <?php while( have_posts() ) : the_post(); ?>
                 <?php get_template_part( 'template-parts/loop/content-single' ); ?>
             <?php endwhile; ?>
