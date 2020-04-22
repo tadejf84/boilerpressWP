@@ -8,7 +8,8 @@
 * Theme styles
 *************/
 @import "partials/variables";               // declare your variables here
-@import "partials/mixins";                  // your own mixins
+@import "partials/mixins";                  // your custom mixins
+@import "partials/utilities";               // your custom utility classes
 @import "partials/base/base";               // global styles
 @import "partials/base/typography";         // global typography
 @import "partials/components/buttons";      // global buttons styles
