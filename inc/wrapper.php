@@ -19,31 +19,31 @@ defined( 'ABSPATH' ) || exit;
  */
 if ( ! class_exists( 'TemplateWrapper' ) ) {
 
-	class TemplateWrapper {
+    class TemplateWrapper {
 
-		public static $main_template;	// Main template path
-		public static $base; 			// Template basename - for example for page.php is page
+        public static $main_template;	// Main template path
+        public static $base; 			// Template basename - for example for page.php is page
 
-		public static function wrap ( $template ) {
-            self::$main_template = $template;
-            self::$base = substr( basename( self::$main_template ), 0, -4 );
+        public static function wrap ( $template ) {
+        self::$main_template = $template;
+        self::$base = substr( basename( self::$main_template ), 0, -4 );
 
-            if ( 'index' == self::$base ) {
-                self::$base = false;
-            }
-			
-		    $templates = array( 'wrapper.php' );
-
-            if ( self::$base ) {
-                array_unshift( $templates, sprintf( 'wrapper-%s.php', self::$base ) );
-            }
-			
-		    return locate_template( $templates );
+        if ( 'index' == self::$base ) {
+        self::$base = false;
         }
-        
-	}
 
-	add_filter( 'template_include', array( __NAMESPACE__ . '\\TemplateWrapper', 'wrap' ) );
+        $templates = array( 'wrapper.php' );
+
+        if ( self::$base ) {
+        array_unshift( $templates, sprintf( 'wrapper-%s.php', self::$base ) );
+        }
+
+        return locate_template( $templates );
+        }
+
+    }
+
+    add_filter( 'template_include', array( __NAMESPACE__ . '\\TemplateWrapper', 'wrap' ) );
 
 }
 
