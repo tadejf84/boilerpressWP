@@ -25,20 +25,21 @@ if ( ! class_exists( 'TemplateWrapper' ) ) {
         public static $base; 			// Template basename - for example for page.php is page
 
         public static function wrap ( $template ) {
-        self::$main_template = $template;
-        self::$base = substr( basename( self::$main_template ), 0, -4 );
 
-        if ( 'index' == self::$base ) {
-        self::$base = false;
-        }
+            self::$main_template = $template;
+            self::$base = substr( basename( self::$main_template ), 0, -4 );
 
-        $templates = array( 'wrapper.php' );
+            if ( 'index' == self::$base ) {
+                self::$base = false;
+            }
 
-        if ( self::$base ) {
-        array_unshift( $templates, sprintf( 'wrapper-%s.php', self::$base ) );
-        }
+            $templates = array( 'wrapper.php' );
 
-        return locate_template( $templates );
+            if ( self::$base ) {
+                array_unshift( $templates, sprintf( 'wrapper-%s.php', self::$base ) );
+            }
+
+            return locate_template( $templates );
         }
 
     }
