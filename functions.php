@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
  * 
  */
 $boilerpress_includes = array(
-	'globals.php',              // Theme constants
+    'globals.php',              // Theme constants
     'helpers.php',              // Place your own helper functions if needed
     'setup.php',                // Theme basic setup
     'customize.php',            // Theme customizations
