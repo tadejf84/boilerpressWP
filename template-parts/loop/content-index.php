@@ -13,7 +13,9 @@ defined( 'ABSPATH' ) || exit;
 
     <header class="article-index__header">
         <?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
-        <h2 class="article-index__title"><?php the_title(); ?></h2>
+        <a href="<?php the_permalink(); ?>">
+            <h2 class="article-index__title"><?php the_title(); ?></h2>
+        </a>
         <?php get_template_part( 'template-parts/article-meta' ); ?>
     </header>
 
