@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
  */
 if ( ! function_exists( 'custom_excerpt_more_text' ) ) {
 
-	function custom_excerpt_more_text( $more ) {
+    function custom_excerpt_more_text( $more ) {
         if ( ! is_admin() ) {
             $more = '';
         }
@@ -40,11 +40,11 @@ add_filter( 'excerpt_more', __NAMESPACE__ . '\\custom_excerpt_more_text' );
  */
 if ( ! function_exists( 'customize_excerpt_more_link' ) ) {
 
-	function customize_excerpt_more_link( $post_excerpt ) {
-		if ( ! is_admin() ) {
-			$post_excerpt = $post_excerpt . '<a class="btn btn--primary" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . __( 'Read More', 'boilerpress' ) . '</a>';
-		}
-		return $post_excerpt;
+    function customize_excerpt_more_link( $post_excerpt ) {
+        if ( ! is_admin() ) {
+            $post_excerpt = $post_excerpt . '<a class="btn btn--primary" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . __( 'Read More', 'boilerpress' ) . '</a>';
+        }
+        return $post_excerpt;
     }
     
 }
