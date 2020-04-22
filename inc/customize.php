@@ -20,10 +20,10 @@ defined( 'ABSPATH' ) || exit;
 if ( ! function_exists( 'custom_excerpt_more_text' ) ) {
 
 	function custom_excerpt_more_text( $more ) {
-		if ( ! is_admin() ) {
-			$more = '';
-		}
-		return $more;
+        if ( ! is_admin() ) {
+            $more = '';
+        }
+        return $more;
     }
     
 }
@@ -34,7 +34,7 @@ add_filter( 'excerpt_more', __NAMESPACE__ . '\\custom_excerpt_more_text' );
 /**
  * Customize read more link for excerpts
  *
- * @param string $post_excerpt Posts's excerpt.
+ * @param string
  *
  * @return string
  */
@@ -42,7 +42,7 @@ if ( ! function_exists( 'customize_excerpt_more_link' ) ) {
 
 	function customize_excerpt_more_link( $post_excerpt ) {
 		if ( ! is_admin() ) {
-			$post_excerpt = $post_excerpt . '<a class="btn btn--read-more" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . __( 'Read More', 'boilerpress' ) . '</a>';
+			$post_excerpt = $post_excerpt . '<a class="btn btn--primary" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . __( 'Read More', 'boilerpress' ) . '</a>';
 		}
 		return $post_excerpt;
     }
