@@ -53,6 +53,26 @@ add_filter( 'wp_trim_excerpt',  __NAMESPACE__ . '\\customize_excerpt_more_link' 
 
 
 /**
+ * Customize excerpt length
+ * 
+ * @param int
+ *
+ * @return int
+ */
+if ( ! function_exists( 'customize_excerpt_length' ) ) {
+
+    function customize_excerpt_length( $length ) {
+        if ( is_admin() ) {
+            return $length;
+        }
+        return 55;
+    }
+
+}
+add_filter( 'excerpt_length', __NAMESPACE__ . '\\customize_excerpt_length', 999 );
+
+
+/**
  * Customize the archive title
  *
  * @param string Title
