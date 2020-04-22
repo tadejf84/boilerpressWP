@@ -18,12 +18,12 @@ defined( 'ABSPATH' ) || exit;
  */
 if ( ! function_exists( 'widgets_init' ) ) {
 
-	function widgets_init() {
-		/**
-		 * Example widget
-		 * 
-		 * Change details to your own
-		 */
+    function widgets_init() {
+        /**
+         * Example widget
+         * 
+         * Change details to your own
+         */
         register_sidebar(
             array(
                 'name'          => __( 'Example Widget', 'boilerpress' ),
@@ -36,7 +36,7 @@ if ( ! function_exists( 'widgets_init' ) ) {
             )
         );
     }
-    
+
 } 
 
 //add_action( 'widgets_init', __NAMESPACE__ . '\\widgets_init' );
