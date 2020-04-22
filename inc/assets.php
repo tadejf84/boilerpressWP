@@ -22,6 +22,11 @@ if ( ! function_exists( 'enqueue_theme_assets' ) ) {
 		 * 
 		 */
 		$css_version = $theme_version . '.' . filemtime( BOILERPRESS_STYLESHEETS_DIR . 'main.min.css' );
+
+		// enqueue google fonts - remove if not needed
+		wp_enqueue_style( 'boilerpress-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700', false );
+
+		// theme styles
 		wp_enqueue_style( 'boilerpress-styles', BOILERPRESS_STYLESHEETS_URI . 'main.min.css', array(), $css_version );
 
 		/**
