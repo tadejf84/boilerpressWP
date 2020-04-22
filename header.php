@@ -5,11 +5,11 @@
  * @package BoilerPressWP
  */
 
+// Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 ?>
 
 <header class="site-header">
-
     <div class="container d-flex justify-content-between align-items-center">
 
         <div class="site-header__brand">
@@ -35,5 +35,4 @@ defined( 'ABSPATH' ) || exit;
         <?php get_search_form(); ?>
 
     </div>
-
 </header>
