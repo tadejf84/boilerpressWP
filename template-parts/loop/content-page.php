@@ -1,6 +1,6 @@
 <?php
 /**
- * Default page template content
+ * Default page article content
  *
  * @package BoilerPressWP
  */

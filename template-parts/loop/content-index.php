@@ -1,6 +1,6 @@
 <?php
 /**
- * Archives posts content
+ * Archive posts article content
  *
  * @package BoilerPressWP
  */

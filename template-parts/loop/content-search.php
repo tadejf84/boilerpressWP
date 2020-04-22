@@ -1,6 +1,6 @@
 <?php
 /**
- * Search results content
+ * Search results article content
  *
  * @package BoilerPressWP
  */
