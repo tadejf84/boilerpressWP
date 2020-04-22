@@ -1,2 +1,2 @@
-## your media files go to this folder
-## they get moved automatically to dist/img
+## MEDIA FILES
+Your media files go to this folder. Webpack will move them automatically to dist/img.
