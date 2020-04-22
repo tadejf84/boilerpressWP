@@ -19,6 +19,6 @@ defined( 'ABSPATH' ) || exit;
 
 	<div class="article-single__content">
 		<?php the_content(); ?>
-    </div>
+	</div>
 
 </article>
