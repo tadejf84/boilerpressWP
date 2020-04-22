@@ -69,18 +69,20 @@ if ( ! function_exists( 'post_navigation' ) ) {
 
 	function post_navigation() {
 
-		// Don't print empty markup if there is no previous/next post
-		$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
-		$next     = get_adjacent_post( false, '', false );
-		if ( ! $next && ! $previous ) return;
+		// Get prev/next links
+		$prev_link = get_previous_post_link();
+		$next_link = get_next_post_link();
+
+		// Don't show post navigation markup if there is no previous/next post
+		if ( !$prev_link && !$next_link ) return;
 		?>
 
 		<nav class="post-navigation d-flex justify-content-between">
 			<?php
-			if ( get_previous_post_link() ) {
+			if ( $prev_link ) {
 				previous_post_link( '<span class="post-navigation__prev">%link</span>', _x( '&lt;&nbsp;%title', 'Previous post', 'boilerpress' ) );
 			}
-			if ( get_next_post_link() ) {
+			if ( $next_link ) {
 				next_post_link( '<span class="post-navigation__next">%link</span>', _x( '%title&nbsp;&gt;', 'Next post', 'boilerpress' ) );
 			}
 			?>
