@@ -22,7 +22,6 @@ defined( 'ABSPATH' ) || exit;
 </head>
 
 <body <?php body_class(); ?>>
-
     <div class="site-wrapper">
             
         <?php get_header(); // header ?>
@@ -32,7 +31,6 @@ defined( 'ABSPATH' ) || exit;
         <?php get_footer(); // footer ?>
 
     </div>
-
 </body>
 
 </html>
