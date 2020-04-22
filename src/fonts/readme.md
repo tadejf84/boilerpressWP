@@ -1,3 +1,2 @@
-## your font files go to this folder
-## they get moved automatically to dist/fonts
-A modern, minimal WordPress starter theme
+## FONTS FILES
+Your fonts files go to this folder. Webpack will move them automatically to dist/fonts.
