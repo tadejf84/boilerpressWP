@@ -87,7 +87,7 @@ if ( ! function_exists( 'customize_archive_title' ) ) {
         } elseif ( is_tag() ) {
             $title = single_tag_title( '', false );
         } elseif ( is_author() ) {
-            $title = get_the_author() . ' ' . _e( 'Archives', 'boilderpress' );
+            $title = get_the_author() . ' ' . __( 'Archives', 'boilderpress' );
         } elseif ( is_post_type_archive() ) {
             $title = post_type_archive_title( '', false );
         } elseif ( is_tax() ) {
