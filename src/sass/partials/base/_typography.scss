@@ -69,4 +69,8 @@ h6 {
 a {
     color: $fc-links;
     transition: all $trs-speed ease-in-out;
+
+    &:hover {
+        color: $fc-links;
+    }
 }

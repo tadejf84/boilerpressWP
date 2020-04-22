@@ -1,10 +1,14 @@
+/*
+* your button styles go here
+*/
 .btn {
     display: inline-block;
     appearance: none;
     font-family: $ff-base;
     transition: all $trs-speed ease-in-out;
-    padding: $spacer/2 $spacer*2;
+    padding: $spacer/4 $spacer*2;
     cursor: pointer;
+    border-radius: 0;
     
     &:hover {
         text-decoration: none;
@@ -14,11 +18,11 @@
         background-color: $clr-primary;
         color: #fff;
         text-transform: uppercase;
-        font-size: 16px;
+        font-size: $fs-base;
         font-weight: $fw-semi-bold;
-        box-shadow: 0px 3px 6px rgba(#000, 0.16);
 
         &:hover {
+            color: #fff;
             background-color: darken($clr-primary, 5%);
         }
     }
