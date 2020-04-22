@@ -6,6 +6,9 @@
  * 
  * @package BoilerPressWP
  */
+
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
 ?>
 
 <main class="main">
