@@ -56,7 +56,7 @@ root
 │   └───loop                    # loop template parts
 │   └───article-meta.php        # article meta
 └───templates
-│   └───template-example.php    # custom template example
+    └───template-example.php    # custom template example
 ```
 
 ## How to use
