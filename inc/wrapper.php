@@ -21,8 +21,8 @@ if ( ! class_exists( 'TemplateWrapper' ) ) {
 
     class TemplateWrapper {
 
-        public static $main_template;	// Main template path
-        public static $base; 			// Template basename - for example for page.php is page
+        public static $main_template;   // Main template path
+        public static $base;    // Template basename - for example for page.php is page
 
         public static function wrap ( $template ) {
 
