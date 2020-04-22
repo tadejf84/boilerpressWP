@@ -60,12 +60,12 @@ root
 ```
 
 ## How to use
-1. npm run dev - compile assets during development
+1. compile assets during development
 ```javascript
 npm run dev
 ```
 
-2. npm run build - compile assets for build
+2. compile assets for build
 ```javascript
 npm run build
 ```
