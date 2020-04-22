@@ -34,7 +34,12 @@ root
 │    single.php                  # single post template
 │    style.css                   # theme stylesheet (theme headers)
 │    webpack.config.json         # webpack config
-│    wrapper.php                 # wrapper template   
+│    wrapper.php                 # wrapper template
+└─── dist/                       # created by Webpack automatically
+│    └───fonts/                  # fonts
+│    └───img/                    # media files
+│    └───js/                     # compiled & minified scripts
+│    └───css/                    # compiled & minified stylesheets  
 └─── inc/             
 │    └───assets.php              # enqueue theme assets
 │    └───cpt-register.php        # register custom post types & custom taxonomies
