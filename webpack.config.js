@@ -2,7 +2,7 @@ const path = require('path');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
 
@@ -15,6 +15,9 @@ module.exports = {
         filename: 'main.min.js'
     },
 
+    // Set Webpack mode - default is production
+    mode: 'development',
+
     // Plugins
     plugins: [
         // BrowserSync options
@@ -23,7 +26,7 @@ module.exports = {
                 host: 'localhost',
                 port: 3000,
                 proxy: 'http://example-page.da/',
-                files: ['*.php']
+                files: ['../**/*.php']
             }
         ),
         // Extracts the compiled CSS from the SASS files defined in the entry
@@ -43,7 +46,7 @@ module.exports = {
                 to: '../fonts',
                 ignore: ['*.md']
             },
-        ]),
+        ])
     ],
 
     module: {
@@ -73,13 +76,17 @@ module.exports = {
                         }
                     },
                     {
+                        loader: 'postcss-loader',
+                        options: {
+                            parser: "postcss-scss",
+                            plugins: () => [autoprefixer()]
+                        }
+                    },
+                    {
                         loader: 'sass-loader'
                     }
                 ]
             }
         ]
-    },
-
-    // Set Webpack mode - default is production
-    mode: 'development'
+    }
 };
