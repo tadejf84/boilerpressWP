@@ -17,7 +17,7 @@ if ( ! function_exists( 'theme_setup' ) ) {
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
-        // WP Document title
+		// WP Document title
 		add_theme_support( 'title-tag' );
 
 		// WP Nav Menus
@@ -25,6 +25,7 @@ if ( ! function_exists( 'theme_setup' ) ) {
 			'main-menu' => __( 'Main Menu', 'boilerpress' ),
 		) );
 
+		// This feature allows the use of HTML5 markup for the search forms, comment forms, comment lists, gallery, and caption.
 		add_theme_support( 'html5', array(
 			'search-form',
 			'comment-form',
@@ -33,10 +34,10 @@ if ( ! function_exists( 'theme_setup' ) ) {
 			'caption',
 		) );
 
-        // Post thumbnails support
+		// Post thumbnails support
 		add_theme_support( 'post-thumbnails' );
 
-        // Post formats support
+		// Post formats support
 		add_theme_support( 'post-formats', array(
 			'aside',
 			'image',
@@ -52,6 +53,7 @@ if ( ! function_exists( 'theme_setup' ) ) {
 		add_theme_support( 'responsive-embeds' );
 
 	}
+	
 }
 
 add_action( 'after_setup_theme', __NAMESPACE__ . '\\theme_setup' );
