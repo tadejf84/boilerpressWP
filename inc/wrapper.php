@@ -54,10 +54,10 @@ if ( ! class_exists( 'TemplateWrapper' ) ) {
  */
 if ( ! function_exists( 'template_path' ) ) {
 
-	function template_path() {
-	    return TemplateWrapper::$main_template;
+    function template_path() {
+        return TemplateWrapper::$main_template;
     }
-    
+
 }
 
 
@@ -71,5 +71,5 @@ if ( ! function_exists( 'template_base' ) ) {
     function template_base() {
         return TemplateWrapper::$base;
     }
-    
+
 }
