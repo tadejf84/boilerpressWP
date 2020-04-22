@@ -33,8 +33,16 @@ module.exports = {
         }),
         // Move fonts and images from src to dist
         new CopyPlugin([
-            { from: './src/img', to: '../img' },
-            { from: './src/fonts', to: '../fonts' },
+            { 
+                from: './src/img', 
+                to: '../img', 
+                ignore: ['*.md']
+            },
+            { 
+                from: './src/fonts', 
+                to: '../fonts',
+                ignore: ['*.md']
+            },
         ]),
     ],
 
