@@ -42,7 +42,7 @@ if ( ! function_exists( 'customize_excerpt_more_link' ) ) {
 
     function customize_excerpt_more_link( $post_excerpt ) {
         if ( ! is_admin() ) {
-            $post_excerpt = $post_excerpt . '<a class="btn btn--primary" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . __( 'Read More', 'boilerpress' ) . '</a>';
+            $post_excerpt = $post_excerpt . '<p><a class="btn btn--primary" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . __( 'Read More', 'boilerpress' ) . '</a></p>';
         }
         return $post_excerpt;
     }
