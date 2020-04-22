@@ -19,10 +19,10 @@ if ( ! function_exists( 'archive_pagination' ) ) {
 
 	function archive_pagination() {
 
-		// If there is only 1 page, return
+		// If there is only 1 page, don't show pagination
 		if ( $GLOBALS['wp_query']->max_num_pages < 2 ) return;
 
-		// Pagination parameters
+		// Pagination params
 		$args = array(
 			'mid_size'           => 2,
 			'prev_next'          => true,
@@ -36,17 +36,17 @@ if ( ! function_exists( 'archive_pagination' ) ) {
 		// Get pagination links
 		$links = paginate_links( $args );
 
-		// If no links, return
+		// If there are no links, don't show pagination
 		if ( ! $links ) return;
 		?>
 
 		<nav class="pagination">
 			<ul class="pagination__list d-flex list-unstyled">
 				<?php
-				foreach ( $links as $key => $link ) {
+				foreach ( $links as $link ) {
 					?>
 					<li class="pagination__item <?php echo strpos( $link, 'current' ) ? 'current' : ''; ?>">
-						<?php echo str_replace( 'page-numbers', 'page-link', $link ); ?>
+						<?php echo str_replace( 'page-numbers', 'pagination__link', $link ); ?>
 					</li>
 					<?php
 				}
