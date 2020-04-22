@@ -36,27 +36,27 @@ root
 │   webpack.config.json         # webpack config
 │   wrapper.php                 # wrapper template   
 └───inc             
-    └───assets.php              # enqueue theme assets
-    └───cpt-register.php        # register custom post types & custom taxonomies
-    └───customize.php           # theme customizations
-    └───globals.php             # define theme constants
-    └───helpers.php             # your helper functions
-    └───navigation.php          # custom theme navigation functions
-    └───performance.php         # performace & security fixes
-    └───setup.php               # theme basic setup
-    └───widgets.php             # init widgets
-    └───wrapper.php             # template wrapper class
+│   └───assets.php              # enqueue theme assets
+│   └───cpt-register.php        # register custom post types & custom taxonomies
+│   └───customize.php           # theme customizations
+│   └───globals.php             # define theme constants
+│   └───helpers.php             # your helper functions
+│   └───navigation.php          # custom theme navigation functions
+│   └───performance.php         # performace & security fixes
+│   └───setup.php               # theme basic setup
+│   └───widgets.php             # init widgets
+│   └───wrapper.php             # template wrapper class
 └───node_modules
 └───src
-    └───fonts                   # all your fonts go here
-    └───img                     # all your media files go here
-    └───js                      # main.js for your custom js code
-    └───sass                    # all your sass files go here
+│   └───fonts                   # all your fonts go here
+│   └───img                     # all your media files go here
+│   └───js                      # main.js for your custom js code
+│   └───sass                    # all your sass files go here
 └───template-parts
-    └───loop                    # loop template parts
-    └───article-meta.php        # article meta
+│   └───loop                    # loop template parts
+│   └───article-meta.php        # article meta
 └───templates
-    └───template-example.php    # custom template example
+│   └───template-example.php    # custom template example
 ```
 
 ## How to use
