@@ -1,2 +1,2 @@
 # boilerpressWP
-A modern, minimal WordPress starter theme
+A modern, minimal starter theme for WordPress developers
