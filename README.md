@@ -60,7 +60,7 @@ root
 ```
 
 ## How to use
-1. compile assets during development
+1. watch and compile assets during development
 ```javascript
 npm run dev
 ```
