@@ -7,4 +7,5 @@
 
 defined( 'ABSPATH' ) || exit;
 ?>
-<h2>There are no posts!</h2>
+
+<h2><?php esc_html_e( 'No posts were found.', 'boilerpress' ); ?></h2>
