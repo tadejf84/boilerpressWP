@@ -27,5 +27,5 @@ $boilerpress_includes = array(
 );
 
 foreach ( $boilerpress_includes as $bp_inc ) {
-	require_once get_template_directory() . '/inc/' . $bp_inc;
+    require_once get_template_directory() . '/inc/' . $bp_inc;
 }
