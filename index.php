@@ -5,11 +5,11 @@
  * @package BoilerPressWP
  */
 
+// Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 ?>
 
 <main class="main main--index">
-
     <div class="container">
 
         <header class="page-header">
@@ -28,10 +28,9 @@ defined( 'ABSPATH' ) || exit;
                 <?php endwhile; ?>
             </div>
 
-            <?php BoilerPress\Nav\archive_pagination(); // pagination ?>
+            <?php BoilerPress\Nav\archive_pagination(); // pagination component ?>
         <?php endif; ?>
         
     </div>
-
 </main>
 
