@@ -1,0 +1,43 @@
+/*
+* SASS variables
+*
+* This is just my system, replace with your own
+*/
+
+// colors
+$clr-primary: 											    #D8262C;
+$clr-secondary: 										    #F7F3EF;
+                               
+// font family
+$ff-base:                                                   'Open Sans', sans-serif;
+$ff-headings:                                               'Open Sans', sans-serif;
+
+// font weight
+$fw-regular: 									            400;
+$fw-semi-bold: 											    6500;
+$fw-bold: 											        700;
+
+// font colors
+$fc-base: 											       #353535;
+$fc-headings: 									           #D8262C;
+$fc-links: 									               #D8262C;
+
+// font sizes
+$fs-h1: 												    3rem;
+$fs-h2: 												    2rem;
+$fs-h3: 												    1.6rem;
+$fs-h4: 												    1.4rem;
+$fs-h5: 												    1.2rem;
+$fs-h6: 												    1.1rem;
+$fs-base: 											        1rem;
+$fs-sm: 											        0.85rem;
+
+// line heights and letter spacings
+$lh-base: 											        1.7;
+$lh-headings: 									            1.1;
+$ls-base:                                                   0.01em;
+$ls-headings:                                               0.06em;
+
+// other vars
+$trs-speed: 											    0.25s;
+
