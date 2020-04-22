@@ -41,6 +41,7 @@ if ( ! function_exists( 'custom_post_type_register' ) ) {
             'not_found'           => __( 'Not found', 'boilerpress' ),
             'not_found_in_trash'  => __( 'Not found in trash', 'boilerpress' ),
         );
+
         $args = array(
             'label'               => __( 'Example', 'boilerpress' ),
             'description'         => __( 'Description', 'boilerpress' ),
@@ -98,7 +99,6 @@ if ( ! function_exists( 'custom_taxonomy_register' ) ) {
             'not_found'                  => __( 'No writers found.', 'boilerpress' ),
             'menu_name'                  => __( 'Example taxonomy', 'boilerpress' ),
         );
-
 
         $args = array(
             'hierarchical'      => true,
