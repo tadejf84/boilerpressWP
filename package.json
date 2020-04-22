@@ -4,8 +4,8 @@
   "description": "Boilerplate theme for WordPress Developers",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js",
-    "watch": "webpack --watch"
+    "build": "webpack --mode=production",
+    "dev": "webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -17,9 +17,14 @@
     "bootstrap",
     "webpack"
   ],
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
+    "autoprefixer": "^9.7.6",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.1.0",
     "babel-preset-env": "^1.7.0",
@@ -29,6 +34,8 @@
     "css-loader": "^3.5.2",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-scss": "^2.0.0",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.4",
     "webpack": "^4.42.1",
