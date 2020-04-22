@@ -60,7 +60,7 @@ root
 ```
 
 ## How to use
-1. watch and compile assets during development
+1. watch and compile assets for development
 ```javascript
 npm run dev
 ```
@@ -69,3 +69,8 @@ npm run dev
 ```javascript
 npm run build
 ```
+
+## License
+
+GNU General Public License v2 or later
+[GPL 2.0] http://www.gnu.org/licenses/gpl-2.0.html
