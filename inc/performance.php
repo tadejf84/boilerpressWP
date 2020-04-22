@@ -49,7 +49,7 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\\remove_emojis' );
  * @return string
  */
 function hide_login_errors_info() {
-	return '<strong>ERROR</strong>: Stop guessing!';
+    return '<strong>ERROR</strong>: Stop guessing!';
 }
 add_filter( 'login_errors', __NAMESPACE__ . '\\hide_login_errors_info' );
 
@@ -60,8 +60,8 @@ add_filter( 'login_errors', __NAMESPACE__ . '\\hide_login_errors_info' );
  * Redirect to the homepage all users trying to access feeds.
  */
 function disable_feeds() {
-	wp_redirect( home_url() );
-	die;
+    wp_redirect( home_url() );
+    die;
 }
 
 // Disable global RSS, RDF & Atom feeds
