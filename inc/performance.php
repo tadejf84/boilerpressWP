@@ -17,29 +17,37 @@ defined( 'ABSPATH' ) || exit;
  * Remove WP versions
  * 
  */
-function theme_cleanup() {
-    remove_action( 'wp_head', 'wp_generator' );
-    remove_action( 'wp_head', 'rsd_link' );
-    remove_action( 'wp_head', 'wlwmanifest_link' );
-    remove_action( 'wp_head', 'index_rel_link' );
-    remove_action( 'wp_head', 'feed_links', 2 );
-    remove_action( 'wp_head', 'feed_links_extra', 3 );
-    remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10);
-    remove_action( 'wp_head', 'wp_shortlink_wp_head', 10);
+if ( ! function_exists( 'theme_head_cleanup' ) ) {
+
+    function theme_head_cleanup() {
+        remove_action( 'wp_head', 'wp_generator' );
+        remove_action( 'wp_head', 'rsd_link' );
+        remove_action( 'wp_head', 'wlwmanifest_link' );
+        remove_action( 'wp_head', 'index_rel_link' );
+        remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10);
+        remove_action( 'wp_head', 'wp_shortlink_wp_head', 10);
+    }
+
 }
-add_action( 'after_setup_theme', __NAMESPACE__ . '\\theme_cleanup' );
+
+add_action( 'after_setup_theme', __NAMESPACE__ . '\\theme_head_cleanup' );
 
 
 /**
- * Remove emoji script
+ * Remove emojis script
  *
  */
-function remove_emojis(){
-    remove_action('wp_head', 'print_emoji_detection_script', 7);
-    remove_action('wp_print_styles', 'print_emoji_styles');
-    remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-    remove_action( 'admin_print_styles', 'print_emoji_styles' );
+if ( ! function_exists( 'remove_emojis' ) ) {
+
+    function remove_emojis(){
+        remove_action('wp_head', 'print_emoji_detection_script', 7);
+        remove_action('wp_print_styles', 'print_emoji_styles');
+        remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+        remove_action( 'admin_print_styles', 'print_emoji_styles' );
+    }
+
 }
+
 add_action( 'after_setup_theme', __NAMESPACE__ . '\\remove_emojis' );
 
 
@@ -48,9 +56,14 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\\remove_emojis' );
  *
  * @return string
  */
-function hide_login_errors_info() {
-    return '<strong>ERROR</strong>: Stop guessing!';
+if ( ! function_exists( 'hide_login_errors_info' ) ) {
+
+    function hide_login_errors_info() {
+        return '<strong>ERROR</strong>: Stop guessing!';
+    }
+
 }
+
 add_filter( 'login_errors', __NAMESPACE__ . '\\hide_login_errors_info' );
 
 
@@ -59,9 +72,13 @@ add_filter( 'login_errors', __NAMESPACE__ . '\\hide_login_errors_info' );
  * 
  * Redirect to the homepage all users trying to access feeds.
  */
-function disable_feeds() {
-    wp_redirect( home_url() );
-    die;
+if ( ! function_exists( 'disable_feeds' ) ) {
+
+    function disable_feeds() {
+        wp_redirect( home_url() );
+        die;
+    }
+
 }
 
 // Disable global RSS, RDF & Atom feeds
