@@ -22,15 +22,15 @@
     "last 2 versions"
   ],
   "devDependencies": {
-    "@babel/core": "^7.11.1",
-    "@babel/preset-env": "^7.11.0",
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
     "autoprefixer": "^9.8.6",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.1.0",
     "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.26.12",
     "browser-sync-webpack-plugin": "^2.2.2",
-    "copy-webpack-plugin": "^5.1.1",
+    "copy-webpack-plugin": "^5.1.2",
     "css-loader": "^3.6.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.14.1",
@@ -38,10 +38,9 @@
     "postcss-scss": "^2.1.1",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.2.1",
-    "webpack": "^4.44.1",
+    "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0",
-    "node-forge": ">=0.10.0"
+    "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
     "bootstrap": "^4.5.2"
