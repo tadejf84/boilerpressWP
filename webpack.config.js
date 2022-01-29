@@ -1,6 +1,6 @@
 const path = require("path");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin").default;
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const autoprefixer = require("autoprefixer");
 
@@ -17,13 +17,12 @@ module.exports = {
     // Set Webpack mode - default is production
     mode: "development",
 
-    // Plugins
     plugins: [
         // BrowserSync options
         new BrowserSyncPlugin({
             host: "localhost",
             port: 3000,
-            proxy: "http://example-page.da/",
+            proxy: "http://test.local/",
             files: ["../**/*.php"],
         }),
         // Extracts the compiled CSS from the SASS files defined in the entry
@@ -66,11 +65,9 @@ module.exports = {
             },
             // CSS/SASS config
             {
-                test: /\.scss$/,
+                test: /\.s[ac]ss$/i,
                 use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                    },
+                    MiniCssExtractPlugin.loader,
                     {
                         loader: "css-loader",
                         options: {
@@ -80,12 +77,27 @@ module.exports = {
                     {
                         loader: "postcss-loader",
                         options: {
-                            parser: "postcss-scss",
-                            plugins: () => [autoprefixer()],
+                            postcssOptions: {
+                                plugins: [
+                                    [
+                                        "autoprefixer",
+                                        {
+                                            // Options
+                                        },
+                                    ],
+                                ],
+                            },
                         },
                     },
+                    // Compiles Sass to CSS
                     {
                         loader: "sass-loader",
+                        options: {
+                            sourceMap: false,
+                            sassOptions: {
+                                outputStyle: "compressed",
+                            },
+                        },
                     },
                 ],
             },
