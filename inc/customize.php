@@ -42,7 +42,7 @@ if ( ! function_exists( 'customize_excerpt_more_link' ) ) {
 
     function customize_excerpt_more_link( $post_excerpt ) {
         if ( ! is_admin() ) {
-            $post_excerpt = $post_excerpt . '<p><a class="btn btn--primary" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . __( 'Read More', 'boilerpress' ) . '</a></p>';
+            $post_excerpt = $post_excerpt . '<p><a class="btn btn--primary" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . __( 'Read More', BOILERPRESS_TEXT_DOMAIN ) . '</a></p>';
         }
         return $post_excerpt;
     }
@@ -87,13 +87,13 @@ if ( ! function_exists( 'customize_archive_title' ) ) {
         } elseif ( is_tag() ) {
             $title = single_tag_title( '', false );
         } elseif ( is_author() ) {
-            $title = get_the_author() . ' ' . __( 'Archives', 'boilderpress' );
+            $title = get_the_author() . ' ' . __( 'Archives', BOILERPRESS_TEXT_DOMAIN );
         } elseif ( is_post_type_archive() ) {
             $title = post_type_archive_title( '', false );
         } elseif ( is_tax() ) {
             $title = single_term_title( '', false );
         } else {
-            $title = _e( 'Blog', 'boilderpress' );
+            $title = _e( 'Blog', BOILERPRESS_TEXT_DOMAIN );
         }
         return $title;
     }

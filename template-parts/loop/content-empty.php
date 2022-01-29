@@ -9,4 +9,4 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<h2><?php esc_html_e( 'No posts were found.', 'boilerpress' ); ?></h2>
+<h2><?php esc_html_e( 'No posts were found.', BOILERPRESS_TEXT_DOMAIN ); ?></h2>

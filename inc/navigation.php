@@ -26,11 +26,11 @@ if ( ! function_exists( 'archive_pagination' ) ) {
         $args = array(
             'mid_size'           => 2,
             'prev_next'          => true,
-            'prev_text'          => __( '&laquo;', 'boilerpress' ),
-            'next_text'          => __( '&raquo;', 'boilerpress' ),
+            'prev_text'          => __( '&laquo;', BOILERPRESS_TEXT_DOMAIN ),
+            'next_text'          => __( '&raquo;', BOILERPRESS_TEXT_DOMAIN ),
             'type'               => 'array',
             'current'            => max( 1, get_query_var( 'paged' ) ),
-            'screen_reader_text' => __( 'Posts navigation', 'boilerpress' )
+            'screen_reader_text' => __( 'Posts navigation', BOILERPRESS_TEXT_DOMAIN )
         );
 
         // Get pagination links
@@ -81,10 +81,10 @@ if ( ! function_exists( 'post_navigation' ) ) {
         <nav class="post-navigation d-flex justify-content-between">
             <?php
             if ( $prev_link ) {
-                previous_post_link( '<span class="post-navigation__prev">%link</span>', _x( '&lt;&nbsp;%title', 'Previous post', 'boilerpress' ) );
+                previous_post_link( '<span class="post-navigation__prev">%link</span>', _x( '&lt;&nbsp;%title', 'Previous post', BOILERPRESS_TEXT_DOMAIN ) );
             }
             if ( $next_link ) {
-                next_post_link( '<span class="post-navigation__next">%link</span>', _x( '%title&nbsp;&gt;', 'Next post', 'boilerpress' ) );
+                next_post_link( '<span class="post-navigation__next">%link</span>', _x( '%title&nbsp;&gt;', 'Next post', BOILERPRESS_TEXT_DOMAIN ) );
             }
             ?>
         </nav>

@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
 
         <header class="page-header">
             <h1 class="page-title">
-                <?php esc_html_e( 'Search Results for: ', 'boilerpress' ); ?>
+                <?php esc_html_e( 'Search Results for: ', BOILERPRESS_TEXT_DOMAIN ); ?>
                 <span class="query"><?php echo get_search_query(); ?></span>
             </h1>
         </header>

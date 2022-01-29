@@ -22,7 +22,7 @@ if ( ! function_exists( 'theme_setup' ) ) {
 
         // WP Nav Menus
         register_nav_menus( array(
-            'main-menu' => __( 'Main Menu', 'boilerpress' ),
+            'main-menu' => __( 'Main Menu', BOILERPRESS_TEXT_DOMAIN ),
         ) );
 
         // This feature allows the use of HTML5 markup for the search forms, comment forms, comment lists, gallery, and caption.

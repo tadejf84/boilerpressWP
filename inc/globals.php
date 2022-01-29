@@ -33,3 +33,10 @@ define( "BOILERPRESS_SCRIPTS_URI", BOILERPRESS_THEME_URI . '/dist/js/' );
  * 
  */
 define( "BOILERPRESS_MEDIA_URI", BOILERPRESS_THEME_URI . '/dist/img/' );
+
+
+/**
+ * Define theme text domain 
+ * 
+ */
+define( 'BOILERPRESS_TEXT_DOMAIN', 'boilerpress' );
