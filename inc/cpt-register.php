@@ -27,24 +27,24 @@ if ( ! function_exists( 'custom_post_type_register' ) ) {
          * 
          */
         $labels = array(
-            'name'                => _x( 'Example', 'Post Type General Name', 'boilerpress' ),
-            'singular_name'       => _x( 'Example', 'Post Type Singular Name', 'boilerpress' ),
-            'menu_name'           => __( 'Examples', 'boilerpress' ),
-            'parent_item_colon'   => __( 'Parent Item', 'boilerpress' ),
-            'all_items'           => __( 'All Items', 'boilerpress' ),
-            'view_item'           => __( 'View Items', 'boilerpress' ),
-            'add_new_item'        => __( 'Add New Item', 'boilerpress' ),
-            'add_new'             => __( 'Add New', 'boilerpress' ),
-            'edit_item'           => __( 'Edit', 'boilerpress' ),
-            'update_item'         => __( 'Update', 'boilerpress' ),
-            'search_items'        => __( 'Search', 'boilerpress' ),
-            'not_found'           => __( 'Not found', 'boilerpress' ),
-            'not_found_in_trash'  => __( 'Not found in trash', 'boilerpress' ),
+            'name'                => _x( 'Example', 'Post Type General Name', BOILERPRESS_TEXT_DOMAIN ),
+            'singular_name'       => _x( 'Example', 'Post Type Singular Name', BOILERPRESS_TEXT_DOMAIN ),
+            'menu_name'           => __( 'Examples', BOILERPRESS_TEXT_DOMAIN ),
+            'parent_item_colon'   => __( 'Parent Item', BOILERPRESS_TEXT_DOMAIN ),
+            'all_items'           => __( 'All Items', BOILERPRESS_TEXT_DOMAIN ),
+            'view_item'           => __( 'View Items', BOILERPRESS_TEXT_DOMAIN ),
+            'add_new_item'        => __( 'Add New Item', BOILERPRESS_TEXT_DOMAIN ),
+            'add_new'             => __( 'Add New', BOILERPRESS_TEXT_DOMAIN ),
+            'edit_item'           => __( 'Edit', BOILERPRESS_TEXT_DOMAIN ),
+            'update_item'         => __( 'Update', BOILERPRESS_TEXT_DOMAIN ),
+            'search_items'        => __( 'Search', BOILERPRESS_TEXT_DOMAIN ),
+            'not_found'           => __( 'Not found', BOILERPRESS_TEXT_DOMAIN ),
+            'not_found_in_trash'  => __( 'Not found in trash', BOILERPRESS_TEXT_DOMAIN ),
         );
 
         $args = array(
-            'label'               => __( 'Example', 'boilerpress' ),
-            'description'         => __( 'Description', 'boilerpress' ),
+            'label'               => __( 'Example', BOILERPRESS_TEXT_DOMAIN ),
+            'description'         => __( 'Description', BOILERPRESS_TEXT_DOMAIN ),
             'labels'              => $labels,
             'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions', 'author' ),
             'taxonomies'          => array( ),
@@ -67,7 +67,7 @@ if ( ! function_exists( 'custom_post_type_register' ) ) {
     }
 }
 
-//add_action( 'init', __NAMESPACE__ . '\\custom_post_type_register' );
+// add_action( 'init', __NAMESPACE__ . '\\custom_post_type_register' );
 
 
 /**
@@ -86,18 +86,18 @@ if ( ! function_exists( 'custom_taxonomy_register' ) ) {
          * 
          */
         $labels = array(
-            'name'                       => _x( 'Example taxonomy', 'taxonomy general name', 'boilerpress' ),
-            'singular_name'              => _x( 'Example taxonomy', 'taxonomy singular name', 'boilerpress' ),
-            'search_items'               => __( 'Search Iems', 'boilerpress' ),
-            'popular_items'              => __( 'Popular Items', 'boilerpress' ),
-            'all_items'                  => __( 'All Items', 'boilerpress' ),
-            'parent_item'                => __( 'Parent Item', 'boilerpress' ),
-            'parent_item_colon'          => __( 'Parent Item: ', 'boilerpress' ),
-            'edit_item'                  => __( 'Edit Item', 'boilerpress' ),
-            'update_item'                => __( 'Update Item', 'boilerpress' ),
-            'add_new_item'               => __( 'Add New Item', 'boilerpress' ),
-            'not_found'                  => __( 'No writers found.', 'boilerpress' ),
-            'menu_name'                  => __( 'Example taxonomy', 'boilerpress' ),
+            'name'                       => _x( 'Example taxonomy', 'taxonomy general name', BOILERPRESS_TEXT_DOMAIN ),
+            'singular_name'              => _x( 'Example taxonomy', 'taxonomy singular name', BOILERPRESS_TEXT_DOMAIN ),
+            'search_items'               => __( 'Search Iems', BOILERPRESS_TEXT_DOMAIN ),
+            'popular_items'              => __( 'Popular Items', BOILERPRESS_TEXT_DOMAIN ),
+            'all_items'                  => __( 'All Items', BOILERPRESS_TEXT_DOMAIN ),
+            'parent_item'                => __( 'Parent Item', BOILERPRESS_TEXT_DOMAIN ),
+            'parent_item_colon'          => __( 'Parent Item: ', BOILERPRESS_TEXT_DOMAIN ),
+            'edit_item'                  => __( 'Edit Item', BOILERPRESS_TEXT_DOMAIN ),
+            'update_item'                => __( 'Update Item', BOILERPRESS_TEXT_DOMAIN ),
+            'add_new_item'               => __( 'Add New Item', BOILERPRESS_TEXT_DOMAIN ),
+            'not_found'                  => __( 'No writers found.', BOILERPRESS_TEXT_DOMAIN ),
+            'menu_name'                  => __( 'Example taxonomy', BOILERPRESS_TEXT_DOMAIN ),
         );
 
         $args = array(
@@ -114,5 +114,5 @@ if ( ! function_exists( 'custom_taxonomy_register' ) ) {
     }
 }
 
-//add_action( 'init', __NAMESPACE__ . '\\custom_taxonomy_register' );
+// add_action( 'init', __NAMESPACE__ . '\\custom_taxonomy_register' );
 
